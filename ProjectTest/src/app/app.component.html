@@ -1,0 +1,57 @@
+
+<div class="container">
+  <div class="row column-header">
+    <div>
+      <div class="col-2 list-column"></div>
+      <div class="col-2 list-column">Nb d'erreurs crawl 1</div>
+      <div class="col-2 list-column">Nb d'erreurs crawl 2</div>
+      <div class="col-1 list-column">Diff <i class="fa fa-sort"></i></div>
+      <div class="col-1 list-column">Diff %<i class="fa fa-sort"></i></div>
+      <div class="col-2 list-column"></div>
+      <div class="col-2 list-column"></div>
+    </div>
+  </div>
+  <div *ngFor="let dataItem of problemParentDataList">
+
+    <div class="row dataList border border-white border-1 rounded">
+      <div class="">
+        <div class="parent">
+          <div class="col-2 list-column parentName">{{dataItem.name}}</div>
+          <div class="col-2 list-column">{{dataItem.totalCrawl1}}</div>
+          <div class="col-2 list-column">{{dataItem.totalCrawl2}}</div>
+          <div class="col-1 list-column negativeData" *ngIf="dataItem.class == 'negativeData'">{{dataItem.totalDiff}}</div>
+          <div class="col-1 list-column positiveData" *ngIf="dataItem.class == 'positiveData'">{{dataItem.totalDiff}}</div>
+          <div class="col-1 list-column " *ngIf="dataItem.class == ''">{{dataItem.totalDiff}}</div>
+          <div class="col-1 list-column negativeData" *ngIf="dataItem.class == 'negativeData'">{{dataItem.totalDiffPercent}}</div>
+          <div class="col-1 list-column positiveData" *ngIf="dataItem.class == 'positiveData'">{{dataItem.totalDiffPercent}}</div>
+          <div class="col-1 list-column " *ngIf="dataItem.class == ''">{{dataItem.totalDiffPercent}}</div>
+          <!--<div class="col-1 list-column">{{dataItem.totalDiffPercent}}%</div>-->
+          <div class="col-2 list-column"><a class="lnkDetails" href="#">Voir le dètail</a></div>
+          <div class="col-2 list-column"><a class="lnkDetails" href="#">Replier</a> <i class="fa fa-sort-desc"></i></div>
+        </div>
+      </div>
+      <div class="" *ngFor="let childItem of dataItem.problemDataList">
+        <div>
+          <hr class="col-12 list-item-divider" />
+        </div>
+        <div>
+          <div class="col-2 list-column firstChild">{{childItem.name}}</div>
+          <div class="col-2 list-column">{{childItem.crawl1}}</div>
+          <div class="col-2 list-column">{{childItem.crawl2}}</div>
+          <div class="col-1 list-column negativeData" *ngIf="childItem.class == 'negativeData'">{{childItem.diff}}</div>
+          <div class="col-1 list-column positiveData" *ngIf="childItem.class == 'positiveData'">{{childItem.diff}}</div>
+          <div class="col-1 list-column" *ngIf="childItem.class == ''">{{childItem.diff}}</div>
+
+          <div class="col-1 list-column negativeData" *ngIf="childItem.class == 'negativeData'">{{childItem.diffPercent}}</div>
+          <div class="col-1 list-column positiveData" *ngIf="childItem.class == 'positiveData'">{{childItem.diffPercent}}</div>
+          <div class="col-1 list-column"  *ngIf="childItem.class == ''">{{childItem.diffPercent}}</div>
+          <!--<div class="col-1 list-column">{{childItem.diff}}</div>
+  <div class="col-1 list-column">{{childItem.diffPercent}}</div>-->
+          <div class="col-2 list-column"><a class="lnkDetails" href="#">Voir le dètail</a></div>
+          <div class="col-2 list-column"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-3"></div>
+  </div>
+</div>

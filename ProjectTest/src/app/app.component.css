@@ -1,0 +1,56 @@
+.list-column {
+    display: inline-block;
+    font-size: 10px;
+    color: gray
+}
+
+.column-header {
+  width: 95%;
+  margin: auto;
+  font-weight: bold;
+}
+
+.container {
+  background-color: #EDF0F5;
+  height: 100%;
+  width: 1000px;
+}
+
+.container div:last-child {
+  padding-bottom: 8px;
+}
+
+.dataList {
+  background-color: white;
+  width: 95%;
+  margin: auto;
+}
+
+.list-item-divider {
+    margin: 0;
+}
+
+.firstChild {
+  padding-left: 10px;
+}
+
+.parent {
+    font-weight: bold;
+}
+
+.parent div:first-child{
+  font-size: 12px;
+}
+
+.lnkDetails {
+  color: #ADE0F1;
+  font-weight: bolder;
+}
+
+.negativeData {
+  color: #B9E8C4;
+}
+
+.positiveData {
+  color: #FF8787
+}
